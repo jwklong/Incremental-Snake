@@ -9,7 +9,7 @@ function Button1() {
     this.buy = function() {
         if (snake.total2 >= this.cost) {
             snake.total2 -= this.cost
-            this.cost *= 1.6
+            this.cost *= 1.7
             this.cost = Math.round(this.cost)
             this.level += 1
             snake.multi = (this.level + 1)
@@ -18,7 +18,7 @@ function Button1() {
 }
 
 function Button2() {
-    this.cost = 37;
+    this.cost = 43;
     this.level = 0;
     window.setInterval(() => {
         document.getElementById('button2cost').innerText = this.cost;
@@ -28,10 +28,10 @@ function Button2() {
     this.buy = function() {
         if (snake.total2 >= this.cost) {
             snake.total2 -= this.cost
-            this.cost *= 1.8
+            this.cost *= 1.9
             this.cost = Math.round(this.cost)
             this.level += 0.01
-            snake.multi2 = (this.level)
+            snake.multi2 = (this.level + 1)
         }
     }
 }
