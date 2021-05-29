@@ -10,6 +10,7 @@ var snake;
   fruit = new Fruit();
   button1 = new Button1();
   button2 = new Button2();
+  button3 = new Button3();
   fruit.pickLocation();
 
   window.setInterval(() => {
@@ -27,10 +28,16 @@ var snake;
       .innerText = snake.total;
     document.querySelector('.score2')
       .innerText = snake.total2;
-  }, 200);
+  }, 125);
 }());
 
 window.addEventListener('keydown', ((evt) => {
   const direction = evt.key.replace('Arrow', '');
   snake.changeDirection(direction);
 }));
+
+window.addEventListener("keydown", function(e) {
+    if(["Space","ArrowUp","ArrowDown","ArrowLeft","ArrowRight"].indexOf(e.code) > -1) {
+        e.preventDefault();
+    }
+}, false);
