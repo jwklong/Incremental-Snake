@@ -1,6 +1,6 @@
 const canvas = document.querySelector(".canvas");
 const ctx = canvas.getContext("2d");
-const scale = 10;
+const scale = 25;
 const rows = canvas.height / scale;
 const columns = canvas.width / scale;
 var snake;
@@ -8,6 +8,8 @@ var snake;
 (function setup() {
   snake = new Snake();
   fruit = new Fruit();
+  button1 = new Button1();
+  button2 = new Button2();
   fruit.pickLocation();
 
   window.setInterval(() => {
@@ -25,7 +27,7 @@ var snake;
       .innerText = snake.total;
     document.querySelector('.score2')
       .innerText = snake.total2;
-  }, 250);
+  }, 200);
 }());
 
 window.addEventListener('keydown', ((evt) => {

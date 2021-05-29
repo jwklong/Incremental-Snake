@@ -5,10 +5,12 @@ function Snake() {
   this.ySpeed = 0;
   this.total = 0;
   this.total2 = 0;
+  this.multi = 1
+  this.multi2 = 1
   this.tail = [];
 
   this.draw = function() {
-    ctx.fillStyle = "#FFFFFF";
+    ctx.fillStyle = "#00FF00";
     for (let i=0; i<this.tail.length; i++) {
       ctx.fillRect(this.tail[i].x,
         this.tail[i].y, scale, scale);
@@ -80,7 +82,7 @@ function Snake() {
     for (var i=0; i<this.tail.length; i++) {
       if (this.x === this.tail[i].x &&
         this.y === this.tail[i].y) {
-        this.total2 += this.total;
+        this.total2 += Math.round((this.total * this.multi) * (this.multi2 * this.total));
         this.total = 0;
         this.tail = [];
       }

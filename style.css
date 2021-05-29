@@ -1,0 +1,64 @@
+﻿body {
+    font-family: Raleway;
+    background-color: #202020;
+    color: white;
+}
+
+h1, h2, h3, h4, p {
+    text-align: center;
+}
+
+img {
+    display: block;
+    margin: 5px auto;
+    width: 50%;
+    border-radius: 10px;
+    border: 5px solid #3e3e3e;
+    padding: 5px;
+}
+
+#button {
+    background-color: #202020;
+    padding: 5px;
+    margin: 10px;
+    border-radius: 10px;
+    border: 2px solid #202020;
+}
+
+#buttons {
+    background-color: #3e3e3e;
+    padding: 5px;
+    border-radius: 10px;
+    border: 2px solid #202020;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+a {
+    border-left: 5px solid #3e3e3e;
+    border-right: 5px solid #3e3e3e;
+    padding: 5px;
+}
+
+a:link {
+    color: white;
+}
+
+a:visited {
+    color: white;
+}
+
+a:hover {
+    color: white;
+}
+
+a:active {
+    color: white;
+}
+
+#nonlink {
+    border: 1px solid #fff0;
+}
