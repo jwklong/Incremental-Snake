@@ -23,7 +23,8 @@ var snake;
     snake.checkCollision();
     document.querySelector('.score')
       .innerText = snake.total;
-
+    document.querySelector('.score2')
+      .innerText = snake.total2;
   }, 250);
 }());
 

@@ -1,9 +1,10 @@
 function Snake() {
-  this.x = 0;
-  this.y = 0;
+  this.x = 50;
+  this.y = 50;
   this.xSpeed = scale * 1;
   this.ySpeed = 0;
   this.total = 0;
+  this.total2 = 0;
   this.tail = [];
 
   this.draw = function() {
@@ -21,7 +22,7 @@ function Snake() {
       this.tail[i] = this.tail[i+1];
     }
 
-    this.tail[this.total - 1] =
+    this.tail[this.total] =
       { x: this.x, y: this.y };
 
     this.x += this.xSpeed;
@@ -79,6 +80,7 @@ function Snake() {
     for (var i=0; i<this.tail.length; i++) {
       if (this.x === this.tail[i].x &&
         this.y === this.tail[i].y) {
+        this.total2 += this.total;
         this.total = 0;
         this.tail = [];
       }
