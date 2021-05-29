@@ -31,7 +31,7 @@ function Button2() {
             this.cost *= 1.8
             this.cost = Math.round(this.cost)
             this.level += 0.01
-            snake.multi2 = (this.level + 1)
+            snake.multi2 = (this.level)
         }
     }
 }

@@ -6,7 +6,7 @@ function Snake() {
   this.total = 0;
   this.total2 = 0;
   this.multi = 1
-  this.multi2 = 1
+  this.multi2 = 0
   this.tail = [];
 
   this.draw = function() {
@@ -82,7 +82,7 @@ function Snake() {
     for (var i=0; i<this.tail.length; i++) {
       if (this.x === this.tail[i].x &&
         this.y === this.tail[i].y) {
-        this.total2 += Math.round((this.total * this.multi) * (this.multi2 * this.total));
+        this.total2 += Math.round((this.total * this.multi) * ((this.multi2 * this.total)+1));
         this.total = 0;
         this.tail = [];
       }
