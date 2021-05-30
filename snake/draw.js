@@ -28,7 +28,7 @@ var snake;
       .innerText = snake.total;
     document.querySelector('.score2')
       .innerText = snake.total2;
-  }, 125);
+  }, 120);
 }());
 
 window.addEventListener('keydown', ((evt) => {
