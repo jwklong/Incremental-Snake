@@ -22,8 +22,8 @@ function Button2() {
     this.level = 0;
     window.setInterval(() => {
         document.getElementById('button2cost').innerText = this.cost;
-        document.getElementById('button2current').innerText = "x"+Math.round((((((snake.multi2-1)*100)*snake.total)/100)+1)*100)/100;
-        document.getElementById('button2after').innerText = "x"+Math.round(((((((snake.multi2+0.01)-1)*100)*snake.total)/100)+1)*100)/100;
+        document.getElementById('button2current').innerText = "x"+Math.round((((snake.multi2-1)*snake.total)+1)*100)/100;
+        document.getElementById('button2after').innerText = "x"+Math.round(((((snake.multi2+0.01)-1)*snake.total)+1)*100)/100;
     }, 1000/30)
     this.buy = function() {
         if (snake.total2 >= this.cost) {

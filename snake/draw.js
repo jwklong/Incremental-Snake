@@ -24,11 +24,12 @@ var snake;
     }
 
     snake.checkCollision();
-    document.querySelector('.score')
-      .innerText = snake.total;
-    document.querySelector('.score2')
-      .innerText = snake.total2;
-  }, 120);
+    document.querySelector('.score').innerText = snake.total;
+    document.querySelector('.score2').innerText = snake.total2;
+    document.getElementById("multipliers1").innerHTML = snake.multi
+    document.getElementById("multipliers2").innerHTML = Math.round((((snake.multi2-1)*snake.total)+1)*100)/100;
+    document.getElementById("multiplierstotal").innerHTML = "x"+Math.round(((((snake.multi2-1)*snake.total)+1)*snake.multi)*100)/100
+  }, 100);
 }());
 
 window.addEventListener('keydown', ((evt) => {
