@@ -86,9 +86,8 @@ function Snake() {
     for (var i=0; i<this.tail.length; i++) {
       if (this.x === this.tail[i].x &&
         this.y === this.tail[i].y) {
-        this.total = (this.multi2 * this.total);
-        this.total2 += Math.round(this.total * this.multi);
-        this.total = 0;
+        this.total2 += Math.round(this.total * this.multi2 * this.multi);
+        this.total, this.faketotal = 0;
         this.tail = [];
       }
     }
