@@ -4,6 +4,7 @@ function Snake() {
   this.xSpeed = scale * 1;
   this.ySpeed = 0;
   this.total = 0;
+  this.faketotal = 0;
   this.total2 = 0;
   this.multi = 1
   this.multi2 = 1
@@ -20,6 +21,9 @@ function Snake() {
   }
 
   this.update = function() {
+    if (this.faketotal > this.total) {
+      this.total++
+    }
     for (let i=0; i<this.tail.length - 1; i++) {
       this.tail[i] = this.tail[i+1];
     }
@@ -71,7 +75,7 @@ function Snake() {
   this.eat = function(fruit) {
     if (this.x === fruit.x &&
       this.y === fruit.y) {
-      this.total++;
+      this.faketotal += 1;
       return true;
     }
 
