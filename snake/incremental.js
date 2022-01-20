@@ -1,3 +1,18 @@
+class Upgrade {
+    constructor(name,cost,effect) {
+        this.name = name
+        this.level = 0
+        this.cost = cost
+        this.effect = effect
+    }
+    returnCost() {
+        return this.cost(this.level)
+    }
+    returnEffect() {
+        return this.effect(this.level)
+    }
+}
+
 function Button1() {
     this.cost = 12;
     this.level = 0;
