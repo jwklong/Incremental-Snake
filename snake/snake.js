@@ -7,6 +7,7 @@ function Snake() {
   this.total2 = 0;
   this.multi = 1
   this.multi2 = 1
+  this.multi2Output = 0
   this.tail = [];
 
   this.draw = function() {
@@ -82,10 +83,16 @@ function Snake() {
     for (var i=0; i<this.tail.length; i++) {
       if (this.x === this.tail[i].x &&
         this.y === this.tail[i].y) {
-        this.total = (this.multi2 * this.total);
-        this.total2 += Math.round(this.total * this.multi);
-        this.total = 0;
-        this.tail = [];
+          console.log("1a: t1 ",this.total," | t2 ",this.total2," | m1 ",this.multi," | m2 ",this.multi2," | m2out ",this.multi2Output)
+          this.multi2Output = ((this.multi2 - 1) * this.total) + 1
+          console.log("1b: t1 ",this.total," | t2 ",this.total2," | m1 ",this.multi," | m2 ",this.multi2," | m2out ",this.multi2Output)
+          this.total = (this.multi2Output * this.total);
+          console.log("2: t1 ",this.total," | t2 ",this.total2," | m1 ",this.multi," | m2 ",this.multi2," | m2out ",this.multi2Output)
+          this.total2 += Math.round(this.total * this.multi);
+          console.log("3: t1 ",this.total," | t2 ",this.total2," | m1 ",this.multi," | m2 ",this.multi2," | m2out ",this.multi2Output)
+          this.total = 0;
+          console.log("4: t1 ",this.total," | t2 ",this.total2," | m1 ",this.multi," | m2 ",this.multi2," | m2out ",this.multi2Output)
+          this.tail = [];
       }
     }
   }
