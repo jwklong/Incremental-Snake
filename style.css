@@ -2,9 +2,6 @@
     font-family: Raleway;
     background-color: #202020;
     color: white;
-}
-
-h1, h2, h3, h4, p {
     text-align: center;
 }
 
@@ -14,28 +11,33 @@ canvas {
     width: 75%;
 }
 
-img {
-    display: block;
-    margin: 5px auto;
-    width: 50%;
-    border-radius: 10px;
-    border: 5px solid #3e3e3e;
-    padding: 5px;
-}
-
-#button {
+#button,#info {
     background-color: #202020;
     padding: 5px;
     margin: 10px;
     border-radius: 10px;
     border: 2px solid #202020;
+    
+}
+
+#button:hover {
+    color: red;
+}
+#button.canBuy:hover {
+    color: greenyellow;
+}
+#button:hover a {
+    color: white;
+}
+#button.canBuy a.costinfo {
+    color: greenyellow;
+}
+#button.cantBuy a.costinfo {
+    color: red;
 }
 
 #buttons {
-    background-color: #3e3e3e;
-    padding: 5px;
-    border-radius: 10px;
-    border: 2px solid #202020;
+    font-size: medium;
     -webkit-touch-callout: none;
     -webkit-user-select: none;
     -moz-user-select: none;
@@ -43,28 +45,19 @@ img {
     user-select: none;
 }
 
-a {
-    border-left: 5px solid #3e3e3e;
-    border-right: 5px solid #3e3e3e;
-    padding: 5px;
+#buttons a {
+    background: #3e3e3e;
+    padding: 0.25em;
 }
 
 a:link {
-    color: white;
+    color: lightskyblue;
 }
 
 a:visited {
-    color: white;
+    color: blueviolet;
 }
 
-a:hover {
-    color: white;
-}
-
-a:active {
-    color: white;
-}
-
-#nonlink {
-    border: 1px solid #fff0;
+a:link:hover,a:visited:hover {
+    color: lime;
 }

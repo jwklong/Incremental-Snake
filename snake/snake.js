@@ -5,10 +5,13 @@ function Snake() {
   this.ySpeed = 0;
   this.total = 0;
   this.total2 = 0;
-  this.multi = 1
-  this.multi2 = 1
-  this.multi2Output = 0
+  this.multi = 1;
+  this.multi2 = 1;
+  this.multi2Output = 0;
+  this.multi3 = 0;
+  this.multi3Output = 0;
   this.tail = [];
+  this.lastEatenFruit = -1;
 
   this.draw = function() {
     ctx.fillStyle = "#00FF00";
@@ -70,12 +73,14 @@ function Snake() {
   }
 
   this.eat = function(fruit) {
-    if (this.x === fruit.x &&
-      this.y === fruit.y) {
-      this.total++;
-      return true;
+    for (let i = 0; i < fruit.x.length; i++) {
+      if (this.x === fruit.x[i] &&
+        this.y === fruit.y[i]) {
+          this.lastEatenFruit = i;
+          this.total++;
+        return true;
+      }
     }
-
     return false;
   }
 
@@ -83,15 +88,12 @@ function Snake() {
     for (var i=0; i<this.tail.length; i++) {
       if (this.x === this.tail[i].x &&
         this.y === this.tail[i].y) {
-          //console.log("1a: t1 ",this.total," | t2 ",this.total2," | m1 ",this.multi," | m2 ",this.multi2," | m2out ",this.multi2Output)
+          //console.log("1: t1 ",this.total," | t2 ",this.total2," | m1 ",this.multi," | m2 ",this.multi2," | m2out ",this.multi2Output," | m3 ",this.multi3," | m3out ",this.multi3Output)
           this.multi2Output = ((this.multi2 - 1) * this.total) + 1
-          //console.log("1b: t1 ",this.total," | t2 ",this.total2," | m1 ",this.multi," | m2 ",this.multi2," | m2out ",this.multi2Output)
-          this.total = (this.multi2Output * this.total);
-          //console.log("2: t1 ",this.total," | t2 ",this.total2," | m1 ",this.multi," | m2 ",this.multi2," | m2out ",this.multi2Output)
-          this.total2 += Math.round(this.total * this.multi);
-          //console.log("3: t1 ",this.total," | t2 ",this.total2," | m1 ",this.multi," | m2 ",this.multi2," | m2out ",this.multi2Output)
+          this.multi3Output = Math.pow((1+this.multi3), this.total);
+          this.total = (this.multi * this.multi2Output * this.multi3Output * this.total);
+          this.total2 += Math.round(this.total);
           this.total = 0;
-          //console.log("4: t1 ",this.total," | t2 ",this.total2," | m1 ",this.multi," | m2 ",this.multi2," | m2out ",this.multi2Output)
           this.tail = [];
       }
     }
