@@ -1,6 +1,0 @@
-- Prevent snake from doubling back
-- add upgrades for arena size
-- update looks for snake and fruit
-    - snake head identifiable
-    - fruit color variation
-- add different kinds of fruits
